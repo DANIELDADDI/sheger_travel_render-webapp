@@ -1,0 +1,111 @@
+<!-- FOOTER -->
+<footer class="w3-container w3-blue w3-padding-32 w3-center">
+      <p>© 2025 Sheger Travel. All rights reserved.</p>
+      <div class="w3-row-padding w3-stretch">
+
+
+            <!-- code for subscription input email and subscribe button -->
+            <div class="w3-third  ">
+                  <div>
+                        <h3>Subscribe</h3>
+                        <p>Subscribe to our email newsletter to receive updates</p>
+                  </div>
+                  <div class="flex" style="justify-content: space-between; flex-wrap: wrap;">
+                        <input type="email" placeholder="Enter your email"
+                              class="w3-input w3-border w3-round-large w3-margin-bottom"
+                              style="max-width: 300px; display: inline-block;">
+                        <button class="w3-button w3-blue w3-round-large">Subscribe</button>
+                  </div>
+            </div>
+
+
+
+
+            <!-- social media icons -->
+            <div class="w3-third  w3-padding-16">
+                  <div>
+                        <h3>Social Media</h3>
+                        <p>Connect With Us on Social Media</p>
+                  </div><br>
+                  <a href="#" class="w3- w3- w3-hover-blue w3-round- w3-">
+                        <img src="/images/socialIcons/facebook.png" alt="">
+                  </a>
+                  <a href="#" class="w3- w3- w3-hover-blue w3-round- w3-">
+                        <img src="/images/socialIcons/instagram.png" alt="">
+                  </a>
+                  <a href="#" class="w3- w3- w3-hover-blue w3-round-">
+                        <img src="/images/socialIcons/youtube.png" alt="">
+                  </a>
+                  <a href="#" class="w3- w3- w3-hover-blue w3-round">
+                        <img src="/images/socialIcons/tumblr.png" alt="">
+                  </a>
+                  <a href="#" class="w3- w3- w3-hover-blue w3-round-">
+                        <img src="/images/socialIcons/twitter.png" alt="">
+                  </a>
+
+            </div>
+
+            <!-- payment option list -->
+            <div class="w3-third">
+                  <h3>Payment Method</h3>
+                  <img src="/images/paymenticons/visa.png" alt="Visa" style="width: 50px; margin-right: 10px;">
+                  <img src="/images/paymenticons/matercard.png" alt="MasterCard"
+                        style="width: 50px; margin-right: 10px;">
+                  <img src="/images/paymenticons/dinarclub.png" alt="PayPal" style="width: 50px; margin-right: 10px;">
+                  <img src="/images/paymenticons/gpay.png" alt="American Express" style="width: 50px;">
+            </div>
+
+      </div>
+</footer>
+
+
+
+
+
+
+<script>
+      function displayOption(option) {
+            // Hide all sections
+            document.getElementById('oneway').classList.add('w3-hide');
+            document.getElementById('roundtrip').classList.add('w3-hide');
+            document.getElementById('multi').classList.add('w3-hide');
+
+            // Show the selected section
+            document.getElementById(option).classList.remove('w3-hide');
+            //add active class to the clicked button
+            const buttons = document.querySelectorAll('.w3-bar-item');
+            buttons.forEach(button => {
+                  button.classList.remove('w3-blue');
+            });
+            document.querySelector(`button[onclick="displayOption('${option}')"]`).classList.add('w3-blue');
+      }
+
+      // Optional: Show the first section by default
+      document.addEventListener('DOMContentLoaded', function () {
+            displayOption('oneway'); // Show the one-way section by default
+      });
+
+
+      function displayService(service) {
+            // Hide all sections
+            document.getElementById('flight').classList.add('w3-hide');
+            document.getElementById('hotel').classList.add('w3-hide');
+            document.getElementById('car').classList.add('w3-hide');
+
+            // Show the selected section
+            document.getElementById(service).classList.remove('w3-hide');
+            //add active class to the clicked button
+            const buttons = document.querySelectorAll('.w3-bar-item');
+            buttons.forEach(button => {
+                  button.classList.remove('w3-blue');
+            });
+            document.querySelector(`button[onclick="displayService('${service}')"]`).classList.add('w3-blue');
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+            displayService('flight'); // Show the flight section by default
+      });
+</script>
+</body>
+
+</html>

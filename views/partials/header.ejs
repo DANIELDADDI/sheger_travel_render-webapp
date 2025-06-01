@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>websitedesign</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <link rel='stylesheet' href="/css/w3.css">
+      <link rel='stylesheet' href="/css/bodycss.css">
+</head>
+
+<body class="w3-content w3-">
+
+      <!-- sidebar with w3css -->
+      <!-- onclick="document.getElementById('mySidebar').style.display='none'" -->
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-border-right" style="display:none;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large w3-red" onclick="closeMenuBar()">&times;</button>
+            <a href="#" class="w3-bar-item w3-button w3-hover-blue">Flight</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-blue">Hotels</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-blue">Cars</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-blue">LogIn</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-blue">SignUp</a>
+
+      </div>
+
+
+      <!-- menu list have two columns first column hold logo and name of company 
+                  and second column hold menu items -->
+      <div class="w3-bar w3-border w3-card-4 w3-blue w3-padding-16">
+
+            <div class="w3-bar-item w3-display-container">
+                  <button class="w3-button w3-larger w3-hover-none" onclick="openMenuBar()"><i
+                              class="fas fa-bars w3-diplay-right"></i></button>
+                  <!-- <img src="../images/paymentIcons/" alt="logo" style="width: 50px; height: 50px;"> -->
+                  <a href="/" class="w3-button w3-hover-none w3-large">Sheger Travel</a>
+            </div>
+            <div class="w3-bar-item w3-right">
+                  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-none"><i class="fas fa-home"></i>
+                        Package</a>
+                  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-none"><i class="fas fa-globe "></i>
+                        eVisa</a>
+                  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-none"><i
+                              class="fas fa-passport"></i>Passport Renewal</a>
+                  <a href="/login" class="w3-bar-item w3-button w3-hover-none"><i class="fas fa-user"></i> <span
+                              class="w3-hide-small">Login</span></a>
+                  <!-- <a href="#" class="w3-bar-item w3-button"><i class="fas fa-info-circle"></i> About Us</a> -->
+            </div>
+      </div>
+
+      <script>
+            openMenuBar = function () {
+                  document.getElementById("mySidebar").style.display = "block";
+            }
+            closeMenuBar = function () {
+                  document.getElementById("mySidebar").style.display = "none";
+            }
+      </script>

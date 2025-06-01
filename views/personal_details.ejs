@@ -1,0 +1,431 @@
+<%- include('partials/header.ejs') %>
+
+      <div class="w3-content w3-row-padding w3-stretch">
+
+            <!-- ! passeger details -->
+            <div class="w3-col s12 m6 ">
+                  <div class="w3-content w3-row w3-padding w3-black w3- w3-margin-top">
+
+                        <div class="w3-col m4 w3-hide-small ">
+
+                              <div class="w3-row w3-padding-">
+                                    <div class="w3-col s4">
+                                          <img src="../images/logoAirline/ET.png" alt="" style="width: 30px ;">
+                                    </div>
+                                    <div class="w3-col s8">
+                                          <div><span>Ethiopia Airline</span></div>
+                                          <div><span>ET602</span></div>
+                                    </div>
+                              </div>
+                        </div>
+
+
+                        <div class="w3-col s7 m4 w3-left">
+                              <!-- city depature and arrival -->
+                              <div class="w3-flex w3-padding-" style="flex-direction: column;">
+                                    <div class="w3-center">Kuwait(KWI)</div>
+                                    <div class="w3-center">
+                                          <img src="../images/icons/arrow_downward_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                          <span>04h20m</span>
+                                          <img src="../images/icons/arrow_downward_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </div>
+                                    <div class="w3-center"> Addis Ababa(ADD)</div>
+                              </div>
+                        </div>
+
+
+                        <div class="w3-col s5 m4 w3-right-align">
+                              <div class="w3-flex w3-padding-large" style="flex-direction: column;">
+                                    <div>1 Adult</div>
+                                    <div>1 Child </div>
+                                    <div>1 Infant</div>
+                              </div>
+                        </div>
+                  </div>
+
+
+                  <!-- input details only  Mobile email and  -->
+                  <div class="w3-content w3-row w3- w3-white  w3-margin-top">
+                        <form class="w3-row-paddng w3-stretch  w3-container w3-white  w3-margin-top">
+                              <h3>Passeger Contact</h3>
+
+                              <div class="w3-col s12 m6">
+                                    <div class="w3-row-padding w3-stretch">
+                                          <div class="w3-col s6">
+                                                <!-- country code list for Mobile number -->
+                                                <label for="countryCode" class="w3-tiny ">Country Code:</label>
+                                                <select id="countryCode" name="countryCode" class="w3-select w3-border "
+                                                      required>
+                                                      <option value="" disabled selected>country code</option>
+                                                      <option value="+1">+1 (USA)</option>
+                                                      <option value="+44">+44 (UK)</option>
+                                                      <option value="+251">+251 (Ethiopia)</option>
+                                                      <option value="+965" selected>+965 (Kuwait)</option>
+                                                      <!-- Add more country codes as needed -->
+                                                      <option value="+91">+91 (India)</option>
+                                                      <option value="+81">+81 (Japan)</option>
+                                                      <option value="+49">+49 (Germany)</option>
+                                                </select>
+                                          </div>
+
+                                          <div class="w3-col s6">
+                                                <label for="mobile" class="w3-tiny ">Mobile Number:</label>
+                                                <input type="tel" id="mobile" name="mobile"
+                                                      class="w3-input w3-border w3-round w3-card" required>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="w3-col s12 m6">
+                                    <label for="email" class="w3-tiny ">Email Address:</label>
+                                    <input type="email" id="email" name="email"
+                                          class="w3-input w3-border w3-round w3-card" required>
+                              </div>
+
+                        </form>
+                  </div>
+
+                  <!-- personal details -->
+                  <div class="w3-content w3-row w3- w3-white w3--24 w3-margin-top">
+                        <form class="w3-row-paddng w3-stretch  w3-container w3-white w3-24 w3-margin-top">
+                              <h3>Passeger Details</h3>
+
+                              <div class="w3-row-padding w3-stretch w3-padding w3-stretch">
+                                    <div class="w3-col s12 m2">
+                                          <label for="title" class="w3-tiny ">Title:</label>
+                                          <select id="title" name="title" class="w3-select w3-border w3-round w3-card"
+                                                required>
+                                                <option value="" disabled selected>Title</option>
+                                                <option value="Mr">Mr.</option>
+                                                <option value="Mrs">Mrs.</option>
+                                                <option value="Miss">Miss</option>
+                                                <option value="Ms">Ms.</option>
+                                                <option value="Dr">Dr.</option>
+                                                <!-- Add more titles as needed -->
+                                          </select>
+                                    </div>
+                                    <div class="w3-col s12 m5">
+                                          <label for="firstName" class="w3-tiny ">First Name:</label>
+                                          <input type="text" id="firstName" name="firstName"
+                                                class="w3-input w3-border w3-round w3-card" required>
+                                    </div>
+
+                                    <div class="w3-col s12 m5">
+                                          <label for="lastName" class="w3-tiny ">Last Name:</label>
+                                          <input type="text" id="lastName" name="lastName"
+                                                class="w3-input w3-border w3-round w3-card" required>
+                                    </div>
+
+
+                              </div>
+
+
+                              <div class="w3-row-padding w3-stretch w3-padding w3-stretch">
+
+                                    <div class="w3-col s4 m4">
+                                          <label for="passportNumber" class="w3-tiny ">Passport No:</label>
+                                          <input type="text" id="passportNumber" name="passportNumber"
+                                                class="w3-input w3-border w3-round w3-card" required>
+                                    </div>
+
+                                    <div class="w3-col s4 m4">
+                                          <label for="nationality" class="w3-tiny ">Nationality</label>
+                                          <!-- input list dropdwon -->
+                                          <select id="nationality" name="nationality"
+                                                class="w3-select w3-border w3-round w3-card" required>
+                                                <option value="" disabled selected>Nationality</option>
+                                                <option value="Ethiopian">Ethiopian</option>
+                                                <option value="Kuwaiti">Kuwaiti</option>
+                                                <option value="American">American</option>
+                                                <option value="British">British</option>
+                                                <option value="Indian">Indian</option>
+                                                <option value="Japanese">Japanese</option>
+                                                <option value="German">German</option>
+                                                <!-- Add more nationalities as needed -->
+                                          </select>
+                                    </div>
+
+                                    <div class="w3-col s4 m4">
+                                          <!-- gender -->
+                                          <label class="w3-tiny" for="gender">Gender</label>
+                                          <select id="gender" name="gender" class="w3-select w3-border w3-round w3-card"
+                                                required>
+                                                <option value="select" disabled selected>Select</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="other">Other</option>
+                                          </select>
+                                    </div>
+                              </div>
+
+
+
+
+                              <div class="w3-row-padding w3-stretch w3-padding w3-stretch">
+                                    <!-- <label for="dateOfBirth" class="w3-tiny ">Date of Birth:</label>
+                        <input type="date" id="dateOfBirth" name="dateOfBirth"
+                              class="w3-input w3-border w3-round w3-card" required> -->
+                                    <div class="w3-row-padding w3-stretch w3-padding w3-stretch">
+                                          <div class="w3-col s4 ">
+                                                <label for="" class="w3-tiny">Month</label>
+                                                <select id="birthMonth" name="birthMonth"
+                                                      class="w3-select w3-border w3-round w3-card w3-medium" required>
+                                                      <option value="" disabled selected>Month</option>
+                                                      <option value="January">January</option>
+                                                      <option value="February">February</option>
+                                                      <option value="March">March</option>
+                                                      <option value="April">April</option>
+                                                      <option value="May">May</option>
+                                                      <option value="June">June</option>
+                                                      <option value="July">July</option>
+                                                      <option value="August">August</option>
+                                                      <option value="September">September</option>
+                                                      <option value="October">October</option>
+                                                      <option value="November">November</option>
+                                                      <option value="December">December</option>
+                                                </select>
+                                          </div>
+                                          <div class="w3-col s4 ">
+                                                <label for="" class="w3-tiny">Date</label>
+                                                <select id="birthDate" name="birthDate"
+                                                      class="w3-select w3-border w3-round w3-card" required>
+                                                      <option value="" disabled selected>Date</option>
+                                                      <!-- Generate options for dates 1 to 31 -->
+                                                      <script>
+                                                            for (let i = 1; i <= 31; i++) {
+                                                                  document.write(`<option value="${i}">${i}</option>`);
+                                                            }
+                                                      </script>
+                                                </select>
+
+                                          </div>
+                                          <div class="w3-col s4 ">
+                                                <label for="" class="w3-tiny">Year</label>
+                                                <select id="birthYear" name="birthYear"
+                                                      class="w3-select w3-border w3-round w3-card" required>
+                                                      <option value="" disabled selected>Year</option>
+                                                      <!-- Generate options for years from 1900 to current year -->
+                                                      <script>
+                                                            const currentYear = new Date().getFullYear();
+                                                            for (let i = currentYear; i >= 1950; i--) {
+                                                                  document.write(`<option value="${i}">${i}</option>`);
+                                                            }
+                                                      </script>
+                                                </select>
+                                          </div>
+                                    </div>
+                              </div>
+
+
+
+
+                        </form>
+                  </div>
+                  <!-- submit button -->
+                  <div class="w3-content w3-row w3-padding w3-white w3-padding-24 w3-margin-top">
+                        <div class="w3-col s12">
+
+                              <!-- <button type="submit" class="w3-button w3-blue w3-round w3-block w3-padding-large"
+                                    onclick="document.querySelector('form').submit()">Submit</button> -->
+
+                              <a href="/payment" class="w3-button w3-blue w3-round w3-block w3-padding-large">Submit and
+                                    Pay</a>
+                        </div>
+                  </div>
+
+
+
+
+
+
+
+
+                  <script>
+                        // This script is for demonstration purposes only
+                        // It prevents the default form submission and shows an alert instead
+                        // You can remove this script when you implement actual form submission logic
+                        document.querySelector('form').addEventListener('submit', function (event) {
+                              event.preventDefault(); // Prevent form submission for demonstration
+                              alert('Form submitted successfully!');
+                        });
+
+
+
+                        // Optional: Add JavaScript for form validation or other functionalities
+                        document.querySelector('form').addEventListener('submit', function (event) {
+                              event.preventDefault(); // Prevent form submission for demonstration
+                              alert('Form submitted successfully!');
+                        });
+                  </script>
+
+            </div>
+
+
+
+            <!-- ! details for trip cost -->
+            <div class="w3-col s12 m6 ">
+                  <!-- Trip Cost -->
+                  <div class="w3-flex w3-content " style="flex-direction: column;">
+                        <h3 class="w3-center">Trip Costs</h3>
+
+                        <div>
+                              <div class="w3-row w3-padding w3- w3-black  ">
+                                    <div class="w3-col s3">Flight</div>
+                                    <div class="w3-col s6 ">260.000kWD</div>
+                                    <button class="w3-col s3 w3-bar- w3-button tablink"
+                                          onclick="openTripCost(event, 'flight')">
+                                          <img src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </button>
+                              </div>
+
+                              <div id="flight" class="w3-flex w3 tabcontent w3-padding-large"
+                                    style="flex-direction: column;">
+
+                                    <div>Departing: <span class=""
+                                                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">2:00
+                                                pm, on 31 May 2025</span></div>
+                                    <div>
+                                          <span>Kuwait(KWI)</span>
+                                          <img src="../images/icons/arrow_forward_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                          <span> Addis Ababa(ADD)</span>
+                                    </div>
+                                    <div> Duration: 04 hrs 20 mins NonStop</div>
+                                    <div><img src="../images/logoAirline/ET.png" alt="" style="width: 25px;">
+                                          <span>Ethiopian Airlines ET425</span>
+
+                                    </div>
+                                    <div>Operated by <span>Ethiopian Airline</span></div>
+
+                              </div>
+
+                        </div>
+
+
+
+                        <hr>
+                        <div>
+                              <div class="w3-row w3-padding w3-black ">
+                                    <div class="w3-col s3 ">Surcharges</div>
+                                    <div class="w3-col s7 ">60.000 KWD</div>
+                                    <button class="w3-col s2  w3-bar- w3-button tablink"
+                                          onclick="openTripCost(event, 'surcharges')">
+                                          <img src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </button>
+                              </div>
+                              <div id="surcharges" class="w3-flex w3 tabcontent " style="flex-direction: column;">
+
+                                    <div class="w3-row w3-padding">
+                                          <div class="w3-col s8 ">Ault x 1</div>
+                                          <div class="w3-col s4 ">100.000 KWD</div>
+                                    </div>
+                                    <div class="w3-row w3-padding">
+                                          <div class="w3-col s8 ">Child X 1</div>
+                                          <div class="w3-col s4 ">50.000 KWD</div>
+                                    </div>
+                                    <div class="w3-row w3-padding">
+                                          <div class="w3-col s8 ">Infinat X 0</div>
+                                          <div class="w3-col s4 "> 0.000 KWD</div>
+                                    </div>
+                              </div>
+
+                        </div>
+
+                        <hr>
+                        <!-- taxt and  feee -->
+                        <div>
+                              <div class="w3-row w3-padding w3-black ">
+
+                                    <div class="w3-col s3 ">Tax and Fee</div>
+                                    <div class="w3-col s7 ">40.000 KWD</div>
+                                    <!-- <div class="w3-col s1 "><img
+                                    src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                    alt=""></div> -->
+                                    <button class="w3-col s2 w3-bar-item w3-button tablink"
+                                          onclick="openTripCost(event, 'taxfee')">
+                                          <img src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </button>
+
+                              </div>
+
+                              <div id="taxfee" class="w3-flex w3- tabcontent  " style="flex-direction: column;">
+
+                                    <div class="w3-row w3-padding w3-center">
+                                          <div class="w3-col s6">Per Adult</div>
+                                          <div class="w3-col s6">10.000 KWD</div>
+
+                                    </div>
+                                    <div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Airport Service Charge Kuwait
+                                                </div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Airport Departure Tax Kuwait
+                                                </div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Passenger Service Charge
+                                                      Arrival</div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Passenger Service Charge</div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                    </div>
+
+                              </div>
+                              <hr>
+
+
+                        </div>
+
+
+                        <div class="s">
+                              <div class="w3-row w3-padding w3-black ">
+                                    <div class="w3-col s6 w3-large ">Total Cost</div>
+                                    <div class="w3-col s6 w3-large ">360.000 KWD</div>
+                              </div>
+                        </div>
+                  </div>
+
+
+
+
+                  <script>
+                        function openTripCost(evt, tripCostName) {
+                              var i, tabcontent, tablinks;
+
+                              // Get all elements with class="tabcontent" and hide them
+                              tabcontent = document.getElementsByClassName("tabcontent");
+                              for (i = 0; i < tabcontent.length; i++) {
+                                    tabcontent[i].style.display = "none";
+                              }
+                              // Get all elements with class="tablinks" and remove the class "w3-blue"
+                              tablinks = document.getElementsByClassName("tablink");
+                              for (i = 0; i < tablinks.length; i++) {
+                                    tablinks[i].className = tablinks[i].className.replace(" w3-light-gray", "");
+                              }
+                              // Show the current tab, and add an "active" class to the button that opened the tab
+                              document.getElementById(tripCostName).style.display = "block";
+                              evt.currentTarget.className += " w3-light-gray";
+                        }
+                        // Get the element with id="defaultOpen" and click on it
+                        document.querySelector(".tablink").click();
+
+                  </script>
+            </div>
+      </div>
+
+
+
+
+      <%- include('partials/footer.ejs') %>

@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs') %>
+
+      <!-- code for login page include user name, user password include all feature -->
+      <div class="w3-content w3-cell-row w3-margin-top w3-card-4">
+            <div class="w3-cell w3-container w3- w3-padding-32 w3-mobile">
+                  <h1 class="w3-center">Sheger Travel</h1>
+                  <p class="w3-center">Your journey starts here!</p>
+                  <div class="w3-center">
+                        <img src="/images/destinations/paris.png" alt="">
+                  </div>
+            </div>
+
+            <div class="w3-cell w3-mobile">
+                  <h2 class="w3-center w3-">Login</h2>
+                  <form class="w3-container w3-" action="/pages/account/login.html" method="post">
+                        <label for="username" class="w3-tiny">Username:</label>
+                        <input class="w3-input w3-border w3-card-2 w3-border-0" type="text" id="username"
+                              name="username" required>
+
+                        <label for="password" class="w3-tiny">Password:</label>
+                        <input class="w3-input w3-border w3-card-2 w3-border-0" type="password" id="password"
+                              name="password" required>
+
+                        <button class="w3-button w3-blue w3-margin-top w3-block" type="submit">Login</button>
+
+                        <p class="w3-center">Don't have an account? <a href="/signup">Signup</a></p>
+                        <p class="w3-center">Forgot your password? <a href="/resetPassword">Reset
+                                    it</a></p>
+                        <p class="w3-center">Or login with:</p>
+
+                        <div class="w3-center w3-margin-bottom">
+                              <a href="/pages/account/google_login.html" class="w3-button w3-red">Google</a>
+                              <a href="/pages/account/facebook_login.html" class="w3-button w3-blue">Facebook</a>
+                              <a href="/pages/account/twitter_login.html" class="w3-button w3-light-blue">Twitter</a>
+                        </div>
+                  </form>
+            </div>
+      </div>
+
+
+      <%- include('partials/footer.ejs') %>

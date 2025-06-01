@@ -1,0 +1,179 @@
+<%- include('partials/header.ejs') %>
+
+
+
+      <div class="w3-content w3-card-4 ">
+            <div class="w3- w3-container w3-row  w3-margin-bottom">
+
+                  <!-- !display for small screen size -->
+                  <div class="w3-hide-medium w3-hide-large w3-row ">
+                        <div class="w3-col s12 w3-padding">
+
+                              <img src="../images/logoAirline/ET.png" alt="" style="max-width: 30px;">
+                              <span class="" style="font-weight:500; font-size: 12px;">Ethiopia Airline</span>
+                              <span class="" style="font-weight:500; font-size: 12px;">ET602</span>
+
+                        </div>
+                  </div>
+
+
+
+
+                  <div class="w3-col m3 w3-4 w3-hide-small">
+                        <div class="w3-center"><img src="../images/logoAirline/ET.png" alt="" style="max-width: 50px;">
+                        </div>
+                        <div class="w3-center">
+                              <span class="" style="font-weight:500; font-size: 12px;">Ethiopia Airline ET602</span>
+                        </div>
+                  </div>
+                  <div class="w3-col m9">
+                        <div class="w3-row">
+                              <div class="w3-col s12 m5 w3-padding">
+                                    <div class="w3 w3-medium">Kuwait(KWI)</div>
+                                    <div class="w3 w3-medium">9:00 AM <span>WED 15 JUN</span> </div>
+                                    <div>Kuwait International Airport</div>
+                                    <div><span>Terminal 1</span></div>
+                              </div>
+                              <div class="w3-col s12 m2 w3- w3-center">
+                                    <div>
+                                          <img src="../images/icons/schedule_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="" style="width:15px">
+                                          <span class="w3-text-grey w3-tiny">1h 30m</span>
+                                    </div>
+                                    <div class="w3-center w3-tiny">---------</div>
+                                    <div class="w3-center w3-tiny">Direct</div>
+                              </div>
+                              <div class="w3-col s12 m5 w3-padding">
+                                    <div class="w3 w3-medium">Addis ababa(ADD)</div>
+                                    <div class="w3 w3-medium">12:30 PM <span>WED 15 JUN</span> </div>
+                                    <div>Bole International Airport</div>
+                                    <div><span>Terminal 1</span></div>
+                              </div>
+                        </div>
+                  </div>
+
+            </div>
+
+            <!-- ! SEE ALL DETAILS ABOUT FLIGHT -->
+            <div class="w3-center">
+                  <hr>
+                  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">See
+                        More Details</button>
+                  <!-- <a href="#" class="w3-button w3-red w3-round">See More Details</a> -->
+                  <hr>
+
+                  <div id="id01" class="w3-modal">
+                        <div class="w3-modal-content">
+                              <div class="w3-container">
+                                    <span onclick="document.getElementById('id01').style.display='none'"
+                                          class="w3-button w3-display-topright w3-red w3-round">&times;</span>
+                                    <!-- <p>Some text. Some text. Some text.</p>
+                                    <p>Some text. Some text. Some text.</p> -->
+
+                                    <div class="w3-row-padding w3-padding-large w3-margin-bottom w3-margin-top">
+                                          <div class="w3-col s12 m4 w3-margin-bottom">
+                                                <button class="w3-button w3-block w3-blue w3-round-medium"
+                                                      onclick="document.getElementById('itinerary').style.display='block'">Itinerary</button>
+                                          </div>
+                                          <div class="w3-col s12 m4 w3-margin-bottom">
+                                                <button class="w3-button w3-block w3-blue w3-round-medium"
+                                                      onclick="document.getElementById('fareRule').style.display='block'">Fare
+                                                      Rule</button>
+                                          </div>
+                                          <div class="w3-col s12 m4">
+                                                <button class="w3-button w3-block w3-blue w3-round-medium"
+                                                      onclick="document.getElementById('baggageAllowance').style.display='block'">Baggage
+                                                      Allowance</button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+
+
+            <!-- ! GUEST | FLIGHT | LOGIN -->
+            <div class="w3-row-padding  w3-padding w3-margin-bottom">
+                  <a href="#" class=" w3-col s12 m4 w3-btn w3-round-medium ">Change Flight <img
+                              src="../images/icons/north_east_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg" alt=""></a>
+                  <a href="/login" class="w3-col s12 m4 w3-btn w3-round-medium ">Login Fast Checkout <img
+                              src="../images/icons/north_east_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg" alt=""></a>
+                  <a href="/personal_details" class="w3-col s12 m4 w3-btn w3-round-medium ">Continue as Guest <img
+                              src="../images/icons/north_east_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg" alt=""></a>
+            </div>
+
+
+
+
+            <!-- Itinerary Modal -->
+            <div id="itinerary" class="w3-modal">
+                  <div class="w3-modal-content w3-card-4">
+                        <header class="w3-container w3-blue">
+                              <span onclick="document.getElementById('itinerary').style.display='none'"
+                                    class="w3-button w3-display-topright">&times;</span>
+                              <h2>Itinerary</h2>
+                        </header>
+                        <div class="w3-container">
+                              <p>Flight details and itinerary information will be displayed here.</p>
+                        </div>
+                  </div>
+            </div>
+            <!-- Fare Rule Modal -->
+            <div id="fareRule" class="w3-modal">
+                  <div class="w3-modal-content w3-card-4">
+                        <header class="w3-container w3-blue">
+                              <span onclick="document.getElementById('fareRule').style.display='none'"
+                                    class="w3-button w3-display-topright">&times;</span>
+                              <h2>Fare Rule</h2>
+                        </header>
+                        <div class="w3-container">
+                              <p>Fare rules and conditions will be displayed here.</p>
+                        </div>
+                  </div>
+            </div>
+            <!-- Baggage Allowance Modal -->
+            <div id="baggageAllowance" class="w3-modal">
+                  <div class="w3-modal-content w3-card-4">
+                        <header class="w3-container w3-blue">
+                              <span onclick="document.getElementById('baggageAllowance').style.display='none'"
+                                    class="w3-button w3-display-topright">&times;</span>
+                              <h2>Baggage Allowance</h2>
+                        </header>
+                        <div class="w3-container">
+                              <p>Baggage allowance details will be displayed here.</p>
+                        </div>
+                  </div>
+            </div>
+
+
+      </div>
+
+      <script>
+            // Get the modal
+            var itineraryModal = document.getElementById('itinerary');
+            var fareRuleModal = document.getElementById('fareRule');
+            var baggageAllowanceModal = document.getElementById('baggageAllowance');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                  if (event.target == itineraryModal || event.target == fareRuleModal || event.target == baggageAllowanceModal) {
+                        itineraryModal.style.display = "none";
+                        fareRuleModal.style.display = "none";
+                        baggageAllowanceModal.style.display = "none";
+                  }
+            }
+            // Close the modal when the user clicks on the close button
+            function closeModal(modal) {
+                  modal.style.display = "none";
+            }
+      </script>
+
+
+
+
+
+
+
+
+      <%- include('partials/footer.ejs') %>

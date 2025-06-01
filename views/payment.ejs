@@ -1,0 +1,285 @@
+<%- include('partials/header.ejs') %>
+
+
+
+      <div class="w3-row-padding w3-stretch">
+            <!-- payment details -->
+            <div class="w3-col s12 m6 ">
+                  <div>
+                        <h3>Payment</h3>
+                        <div class="w3-padding w3-light-grey">
+                              <div class="w3-row">
+                                    <div class="w3-col s6">Total Cost</div>
+                                    <div class="w3-col s6">320.000 KWD</div>
+                              </div>
+                              <div class="w3-row">
+                                    <div class="w3-col s6">Payment Method</div>
+                                    <div class="w3-col s6">
+                                          <select class="w3-select w3-border">
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Mastercar</option>
+                                                <option value="2">Visa</option>
+                                                <option value="3">DinarClub</option>
+                                                <option value="4">PayPal</option>
+                                                <option value="5">Bank Transfer</option>
+                                                <option value="6">Cash on Delivery</option>
+                                                <option value="7">Mobile Payment</option>
+
+                                          </select>
+                                    </div>
+                              </div>
+
+                              <!-- <button class="w3-button w3-blue w3-margin-top">Proceed to Payment</button> -->
+
+                        </div>
+
+                        <!-- Billing address -->
+
+                        <div class="w3-padding w3-light-grey w3-margin-top">
+                              <h4>Billing Address</h4>
+
+                              <div class="w3-row">
+                                    <label for="address" class="w3-col s6 w3-tiny">Address</label>
+                                    <input type="text" class="w3-input w3-border" placeholder="Enter Address">
+                              </div>
+
+                              <div class="w3-row">
+                                    <label for="city" class="w3-col s6 w3-tiny">City</label>
+                                    <input type="text" class="w3-input w3-border" placeholder="Enter City">
+
+                              </div>
+                              <div class="w3-row">
+                                    <label for="country" class="w3-col s6 w3-tiny">Country</label>
+
+                                    <select class="w3-select w3-border">
+                                          <option value="" disabled selected>Choose your country</option>
+                                          <option value="1">Ethiopia</option>
+                                          <option value="2">Kuwait</option>
+                                          <option value="3">USA</option>
+                                    </select>
+
+                              </div>
+
+                              <div class="w3-">
+                                    <label for="phoneNumber" class="w3-col s6">Phone</label>
+                                    <input type="tel" name="phoneNumber" class="w3-input w3-border" placeholder="Phone">
+                              </div>
+
+
+                              <div class="w3-row">
+                                    <label for="postCode" class="w3-col s6 w3-tiny">Postal Code</label>
+                                    <input type="text" class="w3-input w3-border" placeholder="Enter Postal Code">
+                              </div>
+                              <!-- <button class="w3-button w3-green w3-margin-top">Save Address</button> -->
+                        </div>
+
+
+
+
+                        <div class="w3-padding w3-light-grey w3-margin-top">
+                              <h4>Card Details</h4>
+                              <div class="w3-">
+                                    <label for="firstName" class="w3-col s6 w3-tiny">First Name</label>
+                                    <input type="text" name="firstName" class="w3-input w3-border"
+                                          placeholder="First Name">
+
+                              </div>
+                              <div class="w3-">
+                                    <label for="lastName" class="w3-col s6 w3-tiny">Last Name</label>
+                                    <input type="text" name="firstName" class="w3-input w3-border"
+                                          placeholder="Last Name">
+                              </div>
+                              <div class="w3-row">
+                                    <label for="cardNumber" class="w3-col s6 w3-tiny">Card Number</label>
+                                    <input type="text" class="w3-input w3-border" placeholder="1234 5678 9012 3456">
+                              </div>
+                              <div class="w3-row">
+                                    <label for="expireDate" class="w3-col s6 w3-tiny">Expiry Date</label>
+                                    <input type="text" class="w3-input w3-border" placeholder="MM/YY">
+                              </div>
+                              <div class="w3-row">
+                                    <label for="cvv" class="w3-col s6 w3-tiny">CVV<img
+                                                src="../images/icons/info_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </label>
+                                    <input type="text" class="w3-input w3-border" placeholder="Enter CVV">
+
+                              </div>
+                              <button class="w3-button w3-green w3-margin-top">Confirm Payment</button>
+
+                        </div>
+                  </div>
+            </div>
+
+            <!-- total trip cost -->
+            <div class="w3-col s12 m6 ">
+                  <!-- Trip Cost -->
+                  <div class="w3-flex w3-content " style="flex-direction: column;">
+                        <h3 class="w3-center">Trip Costs</h3>
+
+                        <div>
+                              <div class="w3-row w3-padding w3- w3-black  ">
+                                    <div class="w3-col s3">Flight</div>
+                                    <div class="w3-col s6 ">260.000kWD</div>
+                                    <button class="w3-col s3 w3-bar- w3-button tablink"
+                                          onclick="openTripCost(event, 'flight')">
+                                          <img src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </button>
+                              </div>
+
+                              <div id="flight" class="w3-flex w3 tabcontent w3-padding-large"
+                                    style="flex-direction: column;">
+
+                                    <div>Departing: <span class=""
+                                                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">2:00
+                                                pm, on 31 May 2025</span></div>
+                                    <div>
+                                          <span>Kuwait(KWI)</span>
+                                          <img src="../images/icons/arrow_forward_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                          <span> Addis Ababa(ADD)</span>
+                                    </div>
+                                    <div> Duration: 04 hrs 20 mins NonStop</div>
+                                    <div><img src="../images/logoAirline/ET.png" alt="" style="width: 25px;">
+                                          <span>Ethiopian Airlines ET425</span>
+
+                                    </div>
+                                    <div>Operated by <span>Ethiopian Airline</span></div>
+
+                              </div>
+
+                        </div>
+
+
+
+                        <hr>
+                        <div>
+                              <div class="w3-row w3-padding w3-black ">
+                                    <div class="w3-col s3 ">Surcharges</div>
+                                    <div class="w3-col s7 ">60.000 KWD</div>
+                                    <button class="w3-col s2  w3-bar- w3-button tablink"
+                                          onclick="openTripCost(event, 'surcharges')">
+                                          <img src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </button>
+                              </div>
+                              <div id="surcharges" class="w3-flex w3 tabcontent " style="flex-direction: column;">
+
+                                    <div class="w3-row w3-padding">
+                                          <div class="w3-col s8 ">Ault x 1</div>
+                                          <div class="w3-col s4 ">100.000 KWD</div>
+                                    </div>
+                                    <div class="w3-row w3-padding">
+                                          <div class="w3-col s8 ">Child X 1</div>
+                                          <div class="w3-col s4 ">50.000 KWD</div>
+                                    </div>
+                                    <div class="w3-row w3-padding">
+                                          <div class="w3-col s8 ">Infinat X 0</div>
+                                          <div class="w3-col s4 "> 0.000 KWD</div>
+                                    </div>
+                              </div>
+
+                        </div>
+
+                        <hr>
+                        <!-- taxt and  feee -->
+                        <div>
+                              <div class="w3-row w3-padding w3-black ">
+
+                                    <div class="w3-col s3 ">Tax and Fee</div>
+                                    <div class="w3-col s7 ">40.000 KWD</div>
+                                    <!-- <div class="w3-col s1 "><img
+                                    src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                    alt=""></div> -->
+                                    <button class="w3-col s2 w3-bar-item w3-button tablink"
+                                          onclick="openTripCost(event, 'taxfee')">
+                                          <img src="../images/icons/keyboard_arrow_down_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                                alt="">
+                                    </button>
+
+                              </div>
+
+                              <div id="taxfee" class="w3-flex w3- tabcontent  " style="flex-direction: column;">
+
+                                    <div class="w3-row w3-padding w3-center">
+                                          <div class="w3-col s6">Per Adult</div>
+                                          <div class="w3-col s6">10.000 KWD</div>
+
+                                    </div>
+                                    <div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Airport Service Charge Kuwait
+                                                </div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Airport Departure Tax Kuwait
+                                                </div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Passenger Service Charge
+                                                      Arrival</div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                          <div class="w3-col s12 w3-padding">
+                                                <div class="w3-col s8 w3-padding-large ">Passenger Service Charge</div>
+                                                <div class="w3-col s4 ">1.000 KWD</div>
+                                          </div>
+                                    </div>
+
+                              </div>
+                              <hr>
+
+
+                        </div>
+
+
+                        <div class="s">
+                              <div class="w3-row w3-padding w3-black ">
+                                    <div class="w3-col s6 w3-large ">Total Cost</div>
+                                    <div class="w3-col s6 w3-large ">360.000 KWD</div>
+                              </div>
+                        </div>
+                  </div>
+
+
+
+
+                  <script>
+                        function openTripCost(evt, tripCostName) {
+                              var i, tabcontent, tablinks;
+
+                              // Get all elements with class="tabcontent" and hide them
+                              tabcontent = document.getElementsByClassName("tabcontent");
+                              for (i = 0; i < tabcontent.length; i++) {
+                                    tabcontent[i].style.display = "none";
+                              }
+                              // Get all elements with class="tablinks" and remove the class "w3-blue"
+                              tablinks = document.getElementsByClassName("tablink");
+                              for (i = 0; i < tablinks.length; i++) {
+                                    tablinks[i].className = tablinks[i].className.replace(" w3-light-gray", "");
+                              }
+                              // Show the current tab, and add an "active" class to the button that opened the tab
+                              document.getElementById(tripCostName).style.display = "block";
+                              evt.currentTarget.className += " w3-light-gray";
+                        }
+                        // Get the element with id="defaultOpen" and click on it
+                        document.querySelector(".tablink").click();
+
+                  </script>
+            </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <%- include('partials/footer.ejs') %>

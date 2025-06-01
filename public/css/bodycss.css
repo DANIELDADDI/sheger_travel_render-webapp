@@ -1,0 +1,10 @@
+.slider {
+      width: 100%;
+      max-width: 100%;
+      margin: auto;
+      padding-bottom: 20px;
+      background-color: gray;
+      background-image: url('/images/papularTour/dusk-kuwait-city.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+}

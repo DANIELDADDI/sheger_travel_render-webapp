@@ -1,0 +1,686 @@
+<%- include('partials/header.ejs') %>
+
+      <div class="w3-content w3-container w3-padding-16 w3-margin-bottom w3-">
+
+            <div>
+                  <div class="w3-row w3 w3-center">
+                        <div class="w3-col  s6 "><span class="w3-tiny">Flight</span> <br> KWI-ADD</div>
+                        <div class="w3-col  s6 "><span class="w3-tiny">Passeger</span> <br> 1</div>
+                  </div>
+
+                  <div class="w3-row w3-padding w3-center">
+                        <div class="w3-col  s6 "><span class="w3-tiny">Departure</span> <br>2025/May/01</div>
+                        <div class="w3-col  s6 "><span class="w3-tiny">Arrival</span> <br>2025/Aug/10</div>
+                  </div>
+
+                  <div class="w3-row w3- w3-center">
+                        <div class="w3-col  s6 "><span class="w3-tiny">Flight Type</span><br>Oneway</div>
+                        <div class="w3-col  s6 "><span class="w3-tiny">Flight Class</span> <br> Economy</div>
+                  </div>
+
+            </div>
+
+            <div class="w3-button w3-block w3-green">Modify Flight</div>
+      </div>
+
+
+
+      <!-- FLIGHT SELECTION  -->
+      <div class="w3-content w3-blue w3-padding-24 w3-hide" id="flight">
+
+            <div class="w3-bar w3-content w3-margin-left w3-container">
+                  <button class="w3-bar-item w3-button w3-round-medium w3-card-2 w3-text-white  w3-hover-blue"
+                        onclick="displayOption('oneway')" style="font-weight: 400;">Oneway</button>
+                  <button class="w3-bar-item w3-button w3-round-medium w3-card-2 w3-text-white  w3-hover-blue"
+                        onclick="displayOption('roundtrip')" style="font-weight: 400;">Round
+                        Trip</button>
+                  <button class="w3-bar-item w3-button w3-round-medium w3-card-2 w3-text-white  w3-hover-blue"
+                        onclick="displayOption('multi')" style="font-weight: 400;">Multi
+                        City</button>
+            </div>
+
+            <div id="oneway" class="w3-container w3-hide">
+                  <div class="w3-content w3-container w3-round-large  w3-margin-top w3-white w3-padding-large">
+
+                        <form id="flightSearchForm" onsubmit="return handleSearch(event)">
+                              <!-- Departre and Arrival City Search -->
+                              <div class="w3-row-padding w3-stretch" style="justify-content: space-evenly;">
+                                    <div class="w3-half">
+                                          <label for="departureCity" class="w3-half w3-tiny w3-text-gray ">Departure
+                                                City:</label>
+                                          <input type="text" id="departureCity" name="departureCity" required
+                                                class="w3-input w3-border w3-round-large w3- w3-card-2 w3-hover-shadow w3-">
+
+                                    </div>
+                                    <div class="w3-half">
+                                          <label for="arrivalCity" class="w3-half w3-tiny w3-text-gray ">Arrival
+                                                City:</label>
+                                          <input type="text" id="arrivalCity" name="arrivalCity" required
+                                                class="w3-input w3-border w3-round-large w3- w3-card-2 w3-hover-shadow">
+                                    </div>
+                              </div>
+
+                              <!-- Departure and Return Date Search -->
+                              <div class="w3-row-padding w3-stretch" style="justify-content: space-evenly;">
+                                    <div class="w3-half">
+                                          <label for="departureDate" class="w3-tiny w3-text-gray ">Departure
+                                                Date:</label>
+                                          <input type="date" id="departureDate" name="departureDate" required
+                                                class="w3-input w3-border w3-text-gray w3-block w3-round-medium w3-card-2 w3-hover-shadow">
+                                    </div>
+
+                                    <div class="w3-half">
+                                          <label for="returnDate" class="w3-tiny w3-text-gray ">Return
+                                                Date:</label>
+                                          <input type="date" id="returnDate" name="returnDate" disabled
+                                                class="w3-input w3-border w3-text-gray  w3-block w3-round-medium w3-card-2">
+                                    </div>
+                              </div>
+
+                              <!-- Number of passeger flight class selection and search button -->
+                              <div class="w3-row-padding w3-stretch">
+
+                                    <div class="w3-third">
+                                          <label for="passengers" class="w3-tiny w3-text-gray ">Number of
+                                                Passengers:</label>
+                                          <input type="number" id="passengers" name="passengers" min="1" value="1"
+                                                required
+                                                class="w3-input w3-border w3-card-2 w3-round-medium w3-hover-shadow">
+                                    </div>
+
+                                    <div class="w3-third">
+                                          <label for="classOfService" class="w3-tiny w3-text-gray">Class of
+                                                Service:</label>
+                                          <select id="classOfService" name="classOfService"
+                                                class="w3-select w3-border w3-border w3-card-2 w3-round-medium w3-hover-shadow">
+                                                <option value="" disabled selected>Select Class</option>
+                                                <option value="economy">Economy</option>
+                                                <option value="business">Business</option>
+                                                <option value="first">First Class</option>
+                                          </select>
+                                    </div>
+
+
+                                    <div class="w3-third">
+                                          <button type="submit"
+                                                class="w3-button w3-blue w3-margin-top w3-block w3-round-medium w3-card-2">Search
+                                                Flights</button>
+                                    </div>
+                              </div>
+
+                        </form>
+                  </div>
+            </div>
+
+            <div id="roundtrip" class="w3-container w3-hide">
+                  <div class="w3-content w3-container w3-round-large  w3-margin-top w3-white w3-padding-large">
+
+                        <form id="flightSearchForm" onsubmit="return handleSearch(event)">
+                              <!-- Departre and Arrival City Search -->
+                              <div class="w3-row-padding w3-stretch" style="justify-content: space-evenly;">
+                                    <div class="w3-half">
+                                          <label for="departureCity" class="w3-half w3-tiny w3-text-gray ">Departure
+                                                City:</label>
+                                          <input type="text" id="departureCity" name="departureCity" required
+                                                class="w3-input w3-border w3-round-large w3- w3-card-2 w3-hover-shadow w3-">
+
+                                    </div>
+                                    <div class="w3-half">
+                                          <label for="arrivalCity" class="w3-half w3-tiny w3-text-gray ">Arrival
+                                                City:</label>
+                                          <input type="text" id="arrivalCity" name="arrivalCity" required
+                                                class="w3-input w3-border w3-round-large w3- w3-card-2 w3-hover-shadow">
+                                    </div>
+                              </div>
+
+                              <!-- Departure and Return Date Search -->
+                              <div class="w3-row-padding w3-stretch" style="justify-content: space-evenly;">
+                                    <div class="w3-half">
+                                          <label for="departureDate" class="w3-tiny w3-text-gray ">Departure
+                                                Date:</label>
+                                          <input type="date" id="departureDate" name="departureDate" required
+                                                class="w3-input w3-border w3-block w3-round-medium w3-card-2 w3-hover-shadow">
+                                    </div>
+
+                                    <div class="w3-half">
+                                          <label for="returnDate" class="w3-tiny w3-text-gray ">Return
+                                                Date:</label>
+                                          <input type="date" id="returnDate" name="returnDate"
+                                                class="w3-input w3-border  w3-block w3-round-medium w3-card-2 w3-hover-shadow">
+                                    </div>
+                              </div>
+
+                              <!-- Number of passeger flight class selection and search button -->
+                              <div class="w3-row-padding w3-stretch">
+
+                                    <div class="w3-third">
+                                          <label for="passengers" class="w3-tiny w3-text-gray ">Number of
+                                                Passengers:</label>
+                                          <input type="number" id="passengers" name="passengers" min="1" value="1"
+                                                required
+                                                class="w3-input w3-border w3-card-2 w3-round-medium w3-hover-shadow">
+                                    </div>
+
+                                    <div class="w3-third">
+                                          <label for="classOfService" class="w3-tiny w3-text-gray">Class of
+                                                Service:</label>
+                                          <select id="classOfService" name="classOfService"
+                                                class="w3-select w3-border w3-border w3-card-2 w3-round-medium w3-hover-shadow">
+                                                <option value="" disabled selected>Select Class</option>
+                                                <option value="economy">Economy</option>
+                                                <option value="business">Business</option>
+                                                <option value="first">First Class</option>
+                                          </select>
+                                    </div>
+
+
+                                    <div class="w3-third">
+                                          <button type="submit"
+                                                class="w3-button w3-blue w3-margin-top w3-block w3-round-medium w3-card-2">Search
+                                                Flights</button>
+                                    </div>
+                              </div>
+
+                        </form>
+                  </div>
+            </div>
+
+            <div id="multi" class="w3-container w3-hide">
+                  <div class="w3-content w3-container w3-round-large  w3-margin-top w3-white w3-padding-large">
+
+                        <form id="flightSearchForm" onsubmit="return handleSearch(event)">
+                              <!-- Departre and Arrival City Search -->
+                              <div class="w3-row-padding w3-stretch" style="justify-content: space-evenly;">
+                                    <div class="w3-half">
+                                          <label for="departureCity" class="w3-half w3-tiny w3-text-gray ">Departure
+                                                City:</label>
+                                          <input type="text" id="departureCity" name="departureCity" required
+                                                class="w3-input w3-border w3-round-large w3- w3-card-2 w3-hover-shadow w3-">
+
+                                    </div>
+                                    <div class="w3-half">
+                                          <label for="arrivalCity" class="w3-half w3-tiny w3-text-gray ">Arrival
+                                                City:</label>
+                                          <input type="text" id="arrivalCity" name="arrivalCity" required
+                                                class="w3-input w3-border w3-round-large w3- w3-card-2 w3-hover-shadow">
+                                    </div>
+                              </div>
+
+                              <!-- Departure and Return Date Search -->
+                              <div class="w3-row-padding w3-stretch" style="justify-content: space-evenly;">
+                                    <div class="w3-half">
+                                          <label for="departureDate" class="w3-tiny w3-text-gray ">Departure
+                                                Date:</label>
+                                          <input type="date" id="departureDate" name="departureDate" required
+                                                class="w3-input w3-border w3-block w3-round-medium w3-card-2 w3-hover-shadow">
+                                    </div>
+
+                                    <div class="w3-half">
+                                          <label for="returnDate" class="w3-tiny w3-text-gray ">Return Date (if
+                                                applicable):</label>
+                                          <input type="date" id="returnDate" name="returnDate"
+                                                class="w3-input w3-border  w3-block w3-round-medium w3-card-2 w3-hover-shadow">
+                                    </div>
+                              </div>
+
+                              <!-- Number of passeger flight class selection and search button -->
+                              <div class="w3-row-padding w3-stretch">
+
+                                    <div class="w3-third">
+                                          <label for="passengers" class="w3-tiny w3-text-gray ">Number of
+                                                Passengers:</label>
+                                          <input type="number" id="passengers" name="passengers" min="1" value="1"
+                                                required
+                                                class="w3-input w3-border w3-card-2 w3-round-medium w3-hover-shadow">
+                                    </div>
+
+                                    <div class="w3-third">
+                                          <label for="classOfService" class="w3-tiny w3-text-gray">Class of
+                                                Service:</label>
+                                          <select id="classOfService" name="classOfService"
+                                                class="w3-select w3-border w3-border w3-card-2 w3-round-medium w3-hover-shadow">
+                                                <option value="" disabled selected>Select Class</option>
+                                                <option value="economy">Economy</option>
+                                                <option value="business">Business</option>
+                                                <option value="first">First Class</option>
+                                          </select>
+                                    </div>
+
+
+                                    <div class="w3-third">
+                                          <button type="submit"
+                                                class="w3-button w3-blue w3-margin-top w3-block w3-round-medium w3-card-2">Search
+                                                Flights</button>
+                                    </div>
+                              </div>
+
+                        </form>
+                  </div>
+            </div>
+      </div>
+
+
+
+      <div class="w3-content w3-container w3-row w3-card-2 w3-margin-bottom">
+
+            <!-- !display for small screen size -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+
+                        <img src="../images/logoAirline/ET.png" alt="" style="max-width: 30px;">
+                        <span class="" style="font-weight:500; font-size: 12px;">Ethiopia Airline</span>
+                        <span class="" style="font-weight:500; font-size: 12px;">ET602</span>
+
+                  </div>
+            </div>
+
+
+
+
+            <div class="w3-col m3 w3-4 w3-padding w3-hide-small">
+                  <div class="w3-center"><img src="../images/logoAirline/ET.png" alt="" style="max-width: 50px;"></div>
+                  <div class="w3-center">
+                        <span class="" style="font-weight:500; font-size: 12px;">Ethiopia Airline ET602</span>
+                  </div>
+            </div>
+            <div class="w3-col m6 w3-padding">
+                  <div class="w3-row">
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3- w3-medium">10:30 AM</div>
+                              <div class="w3- w3-medium">KWI</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding w3-center">
+                              <div>
+                                    <img src="../images/icons/schedule_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                          alt="" style="width:15px">
+                                    <span class="w3-text-grey w3-tiny">1h 30m</span>
+                              </div>
+                              <div class="w3-center w3-tiny">---------</div>
+                              <div class="w3-center w3-tiny">Direct</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3 w3-medium">12:30 PM</div>
+                              <div class="w3 w3-medium">ADD</div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <div class="w3-col m3 w3--4 w3-padding w3-center w3-hide-small">
+                  <div><span style="font-size: 20px;">160</span> <span style="font-size: 10px;">.000KWD</span></div>
+
+                  <!-- <div class="w3-button w3-block w3-blue w3-round-medium">BOOK</div> -->
+                  <a href="/flight_details" class="w3-button w3-block w3-blue w3-round-medium">Book</a>
+            </div>
+
+            <!-- ! DISPLAY FOR SMALL SCREEN SIZE -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+                        <div class="w3-col s6"><span style="font-size: 20px;">160</span> <span
+                                    style="font-size: 10px;">.000KWD</span></div>
+                        <!-- <div class="w3-col s6 w3-button w3-block w3-blue w3-round-medium">BOOK</div> -->
+                        <a href="/flight_details" class="w3-button w3-block w3-blue w3-round-medium">Book</a>
+                  </div>
+            </div>
+
+
+      </div>
+
+
+
+      <div class="w3-content w3-container w3-row w3-card-2 w3-margin-bottom">
+
+            <!-- !display for small screen size -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+
+                        <img src="../images/logoAirline/MS.png" alt="" style="max-width: 30px;">
+                        <span class="" style="font-weight:500; font-size: 12px;">Egypt Airline</span>
+                        <span class="" style="font-weight:500; font-size: 12px;">EG601</span>
+
+                  </div>
+            </div>
+
+
+
+
+            <div class="w3-col m3 w3-4 w3-padding w3-hide-small">
+                  <div class="w3-center"><img src="../images/logoAirline/MS.png" alt="" style="max-width: 50px;"></div>
+                  <div class="w3-center">
+                        <span class="" style="font-weight:500; font-size: 12px;">Egypt Airline EG601</span>
+                  </div>
+            </div>
+            <div class="w3-col m6 w3-padding">
+                  <div class="w3-row">
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3- w3-medium">10:30 AM</div>
+                              <div class="w3- w3-medium">KWI</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding w3-center">
+                              <div>
+                                    <img src="../images/icons/schedule_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                          alt="" style="width:15px">
+                                    <span class="w3-text-grey w3-tiny">1h 30m</span>
+                              </div>
+                              <div class="w3-center w3-tiny">---------</div>
+                              <div class="w3-center w3-tiny">Direct</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3 w3-medium">12:30 PM</div>
+                              <div class="W3 w3-medium">ADD</div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <div class="w3-col m3 w3--4 w3-padding w3-center w3-hide-small">
+                  <div><span style="font-size: 20px;">160</span> <span style="font-size: 10px;">KWD</span></div>
+                  <!-- <div class="w3-button w3-block w3-blue w3-round-medium">BOOK</div> -->
+                  <a href="/flight_details" class="w3-button w3-block w3-blue w3-round-medium">Book</a>
+            </div>
+
+            <!-- ! DISPLAY FOR SMALL SCREEN SIZE -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+                        <div class="w3-col s6"><span style="font-size: 20px;">160</span> <span
+                                    style="font-size: 10px;">KWD</span></div>
+                        <!-- <div class="w3-col s6 w3-button w3-block w3-blue w3-round-medium">BOOK</div> -->
+                        <a href="/flight_details" class="w3-button w3-block w3-blue w3-round-medium">Book</a>
+                  </div>
+            </div>
+
+
+      </div>
+
+
+
+      <div class="w3-content w3-container w3-row w3-card-2 w3-margin-bottom">
+
+            <!-- !display for small screen size -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+
+                        <img src="../images/logoAirline/KU.png" alt="" style="max-width: 30px;">
+                        <span class="" style="font-weight:500; font-size: 12px;">Kuwait Airline</span>
+                        <span class="" style="font-weight:500; font-size: 12px;">KU602</span>
+
+                  </div>
+            </div>
+
+
+
+
+            <div class="w3-col m3 w3-4 w3-padding w3-hide-small">
+                  <div class="w3-center"><img src="../images/logoAirline/KU.png" alt="" style="max-width: 50px;"></div>
+                  <div class="w3-center">
+                        <span class="" style="font-weight:500; font-size: 12px;">Kuwait Airline KU602</span>
+                  </div>
+            </div>
+            <div class="w3-col m6 w3-padding">
+                  <div class="w3-row">
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3- w3-medium">10:30 AM</div>
+                              <div class="w3- w3-medium">KWI</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding w3-center">
+                              <div>
+                                    <img src="../images/icons/schedule_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                          alt="" style="width:15px">
+                                    <span class="w3-text-grey w3-tiny">1h 30m</span>
+                              </div>
+                              <div class="w3-center w3-tiny">---------</div>
+                              <div class="w3-center w3-tiny">Direct</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3- w3-medium">12:30 PM</div>
+                              <div class="w3- w3-medium">ADD</div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <div class="w3-col m3 w3--4 w3-padding w3-center w3-hide-small">
+                  <div><span style="font-size: 20px;">160</span> <span style="font-size: 10px;">KWD</span></div>
+                  <div class="w3-button w3-block w3-blue w3-round-medium">BOOK</div>
+            </div>
+
+            <!-- ! DISPLAY FOR SMALL SCREEN SIZE -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+                        <div class="w3-col s6"><span style="font-size: 20px;">160</span> <span
+                                    style="font-size: 10px;">KWD</span></div>
+                        <!-- <div class="w3-col s6 w3-button w3-block w3-blue w3-round-medium">BOOK</div> -->
+                        <a href="/flight_details" class="w3-button w3-block w3-blue w3-round-medium">Book</a>
+                  </div>
+            </div>
+
+
+      </div>
+
+      <div class="w3-content w3-container w3-row w3-card-2 w3-margin-bottom">
+            <img src="../images/papularTour/SHEGER.png" alt=""
+                  style="width: 100%; max-height: 200px; object-fit: cover;">
+      </div>
+
+
+      <div class="w3-content w3-container w3-row w3-card-2 w3-margin-bottom">
+
+            <!-- !display for small screen size -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+
+                        <img src="../images/logoAirline/QR.png" alt="" style="max-width: 30px;">
+                        <span class="" style="font-weight:500; font-size: 12px;">Qatar Airline</span>
+                        <span class="" style="font-weight:500; font-size: 12px;">QR602</span>
+
+                  </div>
+            </div>
+
+
+
+
+            <div class="w3-col m3 w3-4 w3-padding w3-hide-small">
+                  <div class="w3-center"><img src="../images/logoAirline/QR.png" alt="" style="max-width: 50px;"></div>
+                  <div class="w3-center">
+                        <span class="" style="font-weight:500; font-size: 12px;">Qatar Airline QR602</span>
+                  </div>
+            </div>
+            <div class="w3-col m6 w3-padding">
+                  <div class="w3-row">
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3- w3-medium">10:30 AM</div>
+                              <div class="w3- w3-medium">KWI</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding w3-center">
+                              <div>
+                                    <img src="../images/icons/schedule_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                          alt="" style="width:15px">
+                                    <span class="w3-text-grey w3-tiny">1h 30m</span>
+                              </div>
+                              <div class="w3-center w3-tiny">---------</div>
+                              <div class="w3-center w3-tiny">Direct</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3 w3-medium">12:30 PM</div>
+                              <div class="w3 w3-medium">ADD</div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <div class="w3-col m3 w3--4 w3-padding w3-center w3-hide-small">
+                  <div><span style="font-size: 20px;">160</span> <span style="font-size: 10px;">KWD</span></div>
+                  <!-- <div class="w3-button w3-block w3-blue w3-round-medium">BOOK</div> -->
+                  <a href="/flight_details" class="w3-button w3-block w3-blue w3-round-medium">Book</a>
+            </div>
+
+            <!-- ! DISPLAY FOR SMALL SCREEN SIZE -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+                        <div class="w3-col s6"><span style="font-size: 20px;">160</span> <span
+                                    style="font-size: 10px;">KWD</span></div>
+                        <!-- <div class="w3-col s6 w3-button w3-block w3-blue w3-round-medium">BOOK</div> -->
+                        <a href="/flight_details" class="w3-button w3-block w3-blue w3-round-medium">Book</a>
+                  </div>
+            </div>
+
+
+      </div>
+
+      <div class="w3-content w3-container w3-row w3-card-2 w3-margin-bottom">
+
+            <!-- !display for small screen size -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+
+                        <img src="../images/logoAirline/EK.png" alt="" style="max-width: 30px;">
+                        <span class="" style="font-weight:500; font-size: 12px;">Emirate Airline</span>
+                        <span class="" style="font-weight:500; font-size: 12px;">EK602</span>
+
+                  </div>
+            </div>
+
+
+
+
+            <div class="w3-col m3 w3-4 w3-padding w3-hide-small">
+                  <div class="w3-center"><img src="../images/logoAirline/EK.png" alt="" style="max-width: 50px;"></div>
+                  <div class="w3-center">
+                        <span class="" style="font-weight:500; font-size: 12px;">Emirate Airline EK602</span>
+                  </div>
+            </div>
+            <div class="w3-col m6 w3-padding">
+                  <div class="w3-row">
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3- w3-medium">10:30 AM</div>
+                              <div class="w3- w3-medium">KWI</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding w3-center">
+                              <div>
+                                    <img src="../images/icons/schedule_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                          alt="" style="width:15px">
+                                    <span class="w3-text-grey w3-tiny">1h 30m</span>
+                              </div>
+                              <div class="w3-center w3-tiny">---------</div>
+                              <div class="w3-center w3-tiny">Direct</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3 w3-medium">12:30 PM</div>
+                              <div class="w3 w3-medium">ADD</div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <div class="w3-col m3 w3--4 w3-padding w3-center w3-hide-small">
+                  <div><span style="font-size: 20px;">160</span> <span style="font-size: 10px;">.000KWD</span></div>
+                  <div class="w3-button w3-block w3-blue w3-round-medium">BOOK</div>
+            </div>
+
+            <!-- ! DISPLAY FOR SMALL SCREEN SIZE -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+                        <div class="w3-col s6"><span style="font-size: 20px;">160</span> <span
+                                    style="font-size: 10px;">.000KWD</span></div>
+                        <div class="w3-col s6 w3-button w3-block w3-blue w3-round-medium">BOOK</div>
+                  </div>
+            </div>
+
+
+      </div>
+
+      <div class="w3-content w3-container w3-row w3-card-2 w3-margin-bottom">
+
+            <!-- !display for small screen size -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+
+                        <img src="../images/logoAirline/TK.png" alt="" style="max-width: 30px;">
+                        <span class="" style="font-weight:500; font-size: 12px;">Turky Airline</span>
+                        <span class="" style="font-weight:500; font-size: 12px;">TK602</span>
+
+                  </div>
+            </div>
+
+
+
+
+            <div class="w3-col m3 w3-4 w3-padding w3-hide-small">
+                  <div class="w3-center"><img src="../images/logoAirline/TK.png" alt="" style="max-width: 50px;"></div>
+                  <div class="w3-center">
+                        <span class="" style="font-weight:500; font-size: 12px;">Turky Airline ET602</span>
+                  </div>
+            </div>
+            <div class="w3-col m6 w3-padding">
+                  <div class="w3-row">
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3- w3-medium">10:30 AM</div>
+                              <div class="w3- w3-medium">KWI</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding w3-center">
+                              <div>
+                                    <img src="../images/icons/schedule_16dp_2854C5_FILL0_wght400_GRAD0_opsz20.svg"
+                                          alt="" style="width:15px">
+                                    <span class="w3-text-grey w3-tiny">1h 30m</span>
+                              </div>
+                              <div class="w3-center w3-tiny">---------</div>
+                              <div class="w3-center w3-tiny">Direct</div>
+                        </div>
+                        <div class="w3-col s4 m4 w3-padding">
+                              <div class="w3 w3-medium">12:30 PM</div>
+                              <div class="w3 w3-medium">ADD</div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <div class="w3-col m3 w3--4 w3-padding w3-center w3-hide-small">
+                  <div><span style="font-size: 20px;">160</span> <span style="font-size: 10px;">.000KWD</span></div>
+                  <div class="w3-button w3-block w3-blue w3-round-medium">BOOK</div>
+            </div>
+
+            <!-- ! DISPLAY FOR SMALL SCREEN SIZE -->
+            <div class="w3-hide-medium w3-hide-large w3-row w3-padding">
+                  <div class="w3-col s12 w3-padding">
+                        <div class="w3-col s6"><span style="font-size: 20px;">160</span> <span
+                                    style="font-size: 10px;">.000KWD</span></div>
+                        <div class="w3-col s6 w3-button w3-block w3-blue w3-round-medium">BOOK</div>
+                  </div>
+            </div>
+
+
+      </div>
+
+
+
+
+
+      <script>
+            function displayOption(option) {
+                  // Hide all sections
+                  document.getElementById('oneway').classList.add('w3-hide');
+                  document.getElementById('roundtrip').classList.add('w3-hide');
+                  document.getElementById('multi').classList.add('w3-hide');
+
+                  // Show the selected section
+                  document.getElementById(option).classList.remove('w3-hide');
+                  //add active class to the clicked button
+                  const buttons = document.querySelectorAll('.w3-bar-item');
+                  buttons.forEach(button => {
+                        button.classList.remove('w3-blue');
+                  });
+                  document.querySelector(`button[onclick="displayOption('${option}')"]`).classList.add('w3-blue');
+            }
+
+            // Optional: Show the first section by default
+            document.addEventListener('DOMContentLoaded', function () {
+                  displayOption('oneway'); // Show the one-way section by default
+            });
+      </script>
+
+
+
+
+
+
+      <%- include('partials/footer.ejs') %>
