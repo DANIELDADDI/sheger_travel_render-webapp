@@ -1,11 +1,3 @@
-// Sample JSON data for airports
-// const airports = [
-//       { code: "JFK", name: "John F. Kennedy International Airport", city: "New York", country: "USA" },
-//       { code: "LAX", name: "Los Angeles International Airport", city: "Los Angeles", country: "USA" },
-//       { code: "LHR", name: "Heathrow Airport", city: "London", country: "UK" },
-//       { code: "CDG", name: "Charles de Gaulle Airport", city: "Paris", country: "France" },
-//       { code: "DXB", name: "Dubai International Airport", city: "Dubai", country: "UAE" },
-// ];
 
 const airports = [
       {
